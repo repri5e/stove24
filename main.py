@@ -9,5 +9,5 @@ class Server (BaseHTTPRequestHandler):
     self.end_headers()
     self.wfile.write(bytes("Hello world", "utf-8"))
    
-httpd = HTTPServer(("localhost", os.environ['PORT']), Server)
+httpd = HTTPServer(("localhost", int(os.environ['PORT'])), Server)
 httpd.serve_forever()
