@@ -1,4 +1,6 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
+import os
+
 class Server (BaseHTTPRequestHandler):
   
   def do_GET (self):
