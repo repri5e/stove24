@@ -11,5 +11,5 @@ class Server (BaseHTTPRequestHandler):
     self.end_headers()
     self.wfile.write(bytes("Hello world", "utf-8"))
    
-httpd = HTTPSServer(("localhost", 8080), Server)
+httpd = HTTPServer(("localhost", 8080), Server)
 httpd.serve_forever()
