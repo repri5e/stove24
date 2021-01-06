@@ -1,6 +1,4 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
-import os.environ
-
 class Server (BaseHTTPRequestHandler):
   
   def do_GET (self):
@@ -9,5 +7,5 @@ class Server (BaseHTTPRequestHandler):
     self.end_headers()
     self.wfile.write(bytes("Hello world", "utf-8"))
    
-httpd = HTTPServer(("localhost", environ['PORT']), Server)
+httpd = HTTPServer(("localhost", os.environ['PORT']), Server)
 httpd.serve_forever()
