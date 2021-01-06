@@ -1,9 +1,9 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import os
 
-class Server (BaseHTTPRequestHandler):
+class Server(BaseHTTPRequestHandler):
   
-  def do_GET (self):
+  def do_GET(self):
     print("Got get request")
     
     self.send_response(200)
