@@ -4,11 +4,14 @@ import os
 class Server (BaseHTTPRequestHandler):
   
   def do_GET (self):
-    self.send_response(200)
+    print("Got get request")
     
-    self.wfile.write(bytes("Hello world", "utf-8"))
-
+    self.send_response(200)
     self.end_headers()
-   
+    self.wfile.write(bytes("Hello world", "utf-8"))
+    
+    print("Response sent")
+
+print("Launching server...")
 httpd = HTTPServer(("", int(os.environ['PORT'])), Server)
 httpd.serve_forever()
