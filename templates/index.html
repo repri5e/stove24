@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Stove 24</title>
+{% endblock %}
+
+{% block body %}
+<h1>Добро пожаловать в Stove 24/7</h1>
+<div class="content">
+  <h3>Новости Stove</h3>
+  <div class="posts">
+      {% for post in posts %}
+        <div class="post">
+            <p> {{ post.content }} </p>
+            <p> {{ post.date_posted.date() }} </p>
+            <p> {{ post.author }} </p>
+        </div>
+      {% endfor %}
+  </div>
+  <form class="post_create" action="/" method="POST">
+    <input type="text" name="post_author" id="post_author" placeholder="Автор">
+    <input type="textarea" name="post_content" id="post_content" placeholder="Текст новости">
+    <input type="submit" value="Опубликовать">
+  </form>
+</div>
+
+{% endblock %}
