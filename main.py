@@ -1,17 +1,7 @@
-from http.server import HTTPServer, BaseHTTPRequestHandler
-import os
+from flask import Flask
 
-class Server(BaseHTTPRequestHandler):
-  
-  def do_GET(self):
-    print("Got get request")
-    
-    self.send_response(200)
-    self.end_headers()
-    self.wfile.write(bytes("Hello world", "utf-8"))
-    
-    print("Response sent")
+app = Flask('__name__')
 
-print("Launching server...")
-httpd = HTTPServer(("", int(os.environ['PORT'])), Server)
-httpd.serve_forever()
+@app.route('/')
+def index():
+    return "Hello world"
