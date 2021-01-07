@@ -2,6 +2,8 @@ from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
+import os
+
 app = Flask('__name__')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///stove.db'
 db = SQLAlchemy(app)
@@ -38,4 +40,4 @@ def index():
         return render_template('index.html', posts=posts)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host = "0.0.0.0", port = os.environ.get("PORT", 5000))
