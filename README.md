@@ -4,5 +4,5 @@
 Каждый думает, что знает, кто думает, что знает меня, но не каждый знает, что думает, кто знает.
 Requirements.txt - важный файл, не удалять.
 
-https://stove24-7.herokuapp.com
+https://stoff.herokuapp.com
 
