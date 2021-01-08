@@ -11,9 +11,10 @@
   <div class="posts">
       {% for post in posts %}
         <div class="post">
+          <p>&mdash;&mdash;&mdash;&mdash;&mdash;</p>
             <p> {{ post.content }} </p>
-            <p> {{ post.date_posted.date() }} </p>
-            <p> {{ post.author }} </p>
+            <p><b> {{ post.author }} </b><i> {{ post.date_posted.datetime() }} </i></p>
+          <p>&mdash;&mdash;&mdash;&mdash;&mdash;</p>
         </div>
       {% endfor %}
   </div>
