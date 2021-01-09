@@ -13,7 +13,11 @@
         <div class="post">
           <p>&mdash;&mdash;&mdash;&mdash;&mdash;</p>
             <p> {{ post.content }} </p>
-            <p><b> {{ post.author }} </b><i> {{ post.date_posted.date() }} {{ post.date_posted.hour }}:{{ post.date_posted.minute }} </i></p>
+            <p><b> {{ post.author }} </b><i> {{ post.date_posted.date() }} {{ post.date_posted.hour }}:
+              {% if post.date_posted.minute < 10 %}
+              0
+              {% endif %}
+            {{ post.date_posted.hour }}</i></p>
           <p>&mdash;&mdash;&mdash;&mdash;&mdash;</p>
         </div>
       {% endfor %}
